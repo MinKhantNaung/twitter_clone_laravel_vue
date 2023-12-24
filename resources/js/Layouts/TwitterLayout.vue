@@ -36,12 +36,64 @@ import ArrowLeft from 'vue-material-design-icons/ArrowLeft.vue'
                 <button
                     class="lg:w-full mt-8 ml-2 text-white font-extrabold text-[22px] bg-[#1C9CEF] p-3 px-3 rounded-full cursor-pointer">
                     <span class="lg:block hidden">Tweet</span>
-                    <span class="block lg:hidden"><Feather /></span>
+                    <span class="block lg:hidden">
+                        <Feather />
+                    </span>
                 </button>
             </div>
             <!-- Side Navigation Section End -->
 
-
+            <!-- Header Section Start -->
+            <div class="lg:w-7/12 w-11/12 border-x border-gray-800 relative">
+                <div class="bg-black bg-opacity-50 backdrop-blur-md z-10 absolute w-full">
+                    <div class="border-gray-800 border-b w-full">
+                        <div class="w-full text-white text-[22px] font-extrabold p-4">
+                            Home
+                        </div>
+                        <div class="flex">
+                            <div class="flex
+                            items-center
+                            justify-center
+                            w-full
+                            h-[60px]
+                            text-white
+                            text-[17px]
+                            font-extrabold
+                            p-4
+                            hover:bg-gray-500
+                            hover:bg-opacity-30
+                            cursor-pointer
+                            transition
+                            duration-200
+                            ease-in-out">
+                                <div class="inline-block text-center border-b-4 border-b-[#1C9CEF] h-[60px]">
+                                    <div class="my-auto mt-4">
+                                        For You
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="
+                        w-full
+                        h-[60px]
+                        text-gray-500
+                        text-[17px]
+                        font-extrabold
+                        p-4
+                        hover:bg-gray-500
+                        hover:bg-opacity-30
+                        cursor-pointer
+                        transition
+                        duration-200
+                        ease-in-out">
+                                <div class="text-center">
+                                    Following
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Header Section End -->
         </div>
     </div>
 </template>
