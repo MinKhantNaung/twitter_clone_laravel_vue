@@ -36,7 +36,7 @@ class TweetController extends Controller
             ]);
             $extension = $file->getClientOriginalExtension();
             $file_name = uniqid() . '_' . $file->getClientOriginalName();
-            $extension === 'mp4' ? $path = '/storage/videos/' : $path = '/storage/pics';
+            $extension === 'mp4' ? $path = '/storage/videos/' : $path = '/storage/pics/';
 
             // Remove the '/storage/' prefix for store with storeAs method
             $remove_path = str_replace('/storage/', '', $path);

@@ -44,6 +44,21 @@ const closeMessageBox = () => {
     uploadType.value = ''
 }
 
+const addTweet = () => {
+    if (!tweet.value) return
+
+    router.post(route('tweets.store'), {
+        tweet: tweet.value,
+        file: file.value
+    }, {
+        preserveScroll: true,
+        preserveState: true,
+        onSuccess: () => {
+            closeMessageBox()
+        }
+    })
+}
+
 </script>
 
 <template>
@@ -232,6 +247,8 @@ const closeMessageBox = () => {
     left-0
     w-full
     h-screen
+    overflow-auto
+    no-scrollbar
     bg-black
     md:bg-gray-400
     md:bg-opacity-30
@@ -253,7 +270,8 @@ const closeMessageBox = () => {
                     <ArrowLeft fillColor="#FFFFFF" :size="28" class="md:hidden block" />
                 </div>
 
-                <button :disabled="!tweet" :class="tweet ? 'bg-[#1C9CEF] text-white' : 'bg-[#124D77] text-gray-400'"
+                <button @click.prevent="addTweet" :disabled="!tweet"
+                    :class="tweet ? 'bg-[#1C9CEF] text-white' : 'bg-[#124D77] text-gray-400'"
                     class="md:hidden font-extrabold text-[16px] p-1.5 px-4 rounded-full cursor-pointer">
                     Tweet
                 </button>
@@ -264,7 +282,7 @@ const closeMessageBox = () => {
                     <img class="rounded-full" width="55" :src="randomImage1" alt="">
                 </div>
                 <div class="w-[calc(100%-100px)]">
-                    <div class="inline-block w-full">
+                    <div class="inline-block w-full h-screen">
                         <div class="flex items-center border border-gray-700 rounded-full">
                             <span class="text-[#1C9CEF] p-0.5 pl-3.5 font-extrabold">Everyone</span>
                             <ChevronDown class="pr-2" fillColor="#1C9CEF" :size="25" />
@@ -309,7 +327,7 @@ const closeMessageBox = () => {
                                 </div>
                             </div>
 
-                            <button :disabled="!tweet"
+                            <button @click.prevent="addTweet" :disabled="!tweet"
                                 :class="tweet ? 'bg-[#1C9CEF] text-white' : 'bg-[#124D77] text-gray-400'"
                                 class="hidden md:block font-extrabold text-[16px] p-1.5 px-4 rounded-full cursor-pointer">
                                 Tweet
