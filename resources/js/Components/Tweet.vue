@@ -37,7 +37,7 @@ let openOptions = ref(false)
 
         <div v-if="tweet.file">
             <div v-if="!tweet.is_video" class="rounded-xl">
-                <img :src="tweet.image" class="mt-2 object-fill rounded-xl w-full" alt="">
+                <img :src="tweet.file" class="mt-2 object-fill rounded-xl w-full" alt="">
             </div>
             <div v-else>
                 <video :src="tweet.file" controls class="rounded-xl"></video>
