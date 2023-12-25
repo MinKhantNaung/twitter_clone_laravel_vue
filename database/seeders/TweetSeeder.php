@@ -51,7 +51,7 @@ class TweetSeeder extends Seeder
             'handle' => '@josephineperry',
             'image' => 'https://randomuser.me/api/portraits/women/59.jpg',
             'tweet' => "Just made a new SEO marketing video. Take a look!!! The good news is that there are several search engine optimization (SEO) tools out there — some free, some paid — that can help you view",
-            'file' => '/storage/videos/Zom_100_03.mp4',
+            'file' => '/storage/videos/Naruto-133.mp4',
             'is_video' => true,
             'comments' => '56',
             'retweets' => '54',
