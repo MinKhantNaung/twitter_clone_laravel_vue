@@ -122,7 +122,7 @@ const closeMessageBox = () => {
                     </div>
                 </div>
 
-                <div class="absolute top-0 z-0 h-screen overflow-auto scrollbar-hide">
+                <div class="absolute top-0 z-0 h-screen overflow-auto no-scrollbar">
                     <div class="mt-[126px]"></div>
                     <slot />
                     <div class="pb-4"></div>
