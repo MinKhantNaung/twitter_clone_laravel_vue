@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from 'vue'
+import { Link } from '@inertiajs/vue3'
 
 import HeartOutline from 'vue-material-design-icons/HeartOutline.vue'
 import ChartBar from 'vue-material-design-icons/ChartBar.vue'
@@ -30,6 +31,15 @@ let openOptions = ref(false)
                 <button type="button" class="block p-2">
                     <DotsHorizontal @click="openOptions = !openOptions" />
                 </button>
+
+                <div v-if="openOptions"
+                    class="absolute mt-1 p-3 right-0 w-[300px] bg-black border border-gray-700 rounded-lg shadow-lg">
+                    <Link as="button" method="delete" :href="route('tweets.destroy', { id: tweet.id })"
+                        class="flex items-center cursor-pointer">
+                        <TrashCanOutline class="pr-3" fillColor="#DC2626" :size="18" />
+                        <span class="text-red-600 font-extrabold">Delete</span>
+                    </Link>
+                </div>
             </div>
         </div>
 
